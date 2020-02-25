@@ -1,0 +1,4 @@
+- name: pkg installed
+  package:
+    state: present
+    name: sshguard

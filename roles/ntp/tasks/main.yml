@@ -1,0 +1,9 @@
+- name: chrony installed
+  package:
+    state: present
+    name: chrony
+
+- name: configuration file
+  template:
+    dest: /etc/chrony/chrony.conf
+    src: chrony.conf

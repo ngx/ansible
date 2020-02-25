@@ -1,0 +1,9 @@
+users:
+
+  - name: 'michael'
+    pwhash: '$6$tl/m1.MRQ27oRMAM$Uy2PVwasNlbSqNam0af0hoyMlinIYlMDyFtZqmoMvTKwp3aakGWOCvF23mbWr5uRDiIo0vYpWEYR0mtCh9JlD1'
+    gauth: 'K5GEG4GIQEVKRQBF7D6CWR6IBI'
+
+  #- name: ''
+  #  pwhash: ''
+  #  gauth: ''

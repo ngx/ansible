@@ -1,0 +1,21 @@
+- name: local users
+  user:
+    state: present
+    name: "{{ user['name'] }}"
+    password: "{{ user['pwhash'] }}"
+    shell: /bin/bash
+    groups:
+      - ssh-user
+      - sudo
+  loop_control:
+    loop_var: user
+  with_dict: "{{ users }}"
+
+- name: local user gauth-key
+  template:
+    dest: "/home/{{ user['name'] }}/.google_authenticator"
+    src: gauth
+    mode: '600'
+  loop_control:
+    loop_var: user
+  with_dict: "{{ users }}"

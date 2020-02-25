@@ -1,0 +1,19 @@
+- name: base package installs
+  package:
+    state: present
+    name:
+      - google-authenticator
+      - apt-transport-https
+      - file
+      - lsof
+      - net-tools
+      - screen
+      - sysvinit-core
+      - vim
+
+- name: base package removals
+  package:
+    state: absent
+    name:
+      - apt-listchanges
+      - systemd
