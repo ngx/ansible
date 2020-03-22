@@ -1,0 +1,13 @@
+---
+ngxbot_plugins:
+  # - name: Irccat
+  #   repo: https://github.com/leamas/supybot-irccat.git
+  #   version: ec9098d3bd8cdd555e2bf859d14e5531e9976199
+
+  - name: NgxPlugins
+    repo: https://github.com/ngx/ngxbot-plugins.git
+    version: 6e4ec33798e68b26e32583ecf604b30e88b78615
+
+  - name: Supybot-plugins
+    repo: https://github.com/ProgVal/Supybot-plugins.git
+    version: fb58bd967337d6888b3c2a46fab49e1841755ffe

@@ -1,0 +1,12 @@
+---
+- name: Add ngxbot group
+  group:
+    gid: "{{ ngxbot_gid }}"
+    name: ngxbot
+
+- name: Add ngxbot user
+  user:
+    uid: "{{ ngxbot_uid }}"
+    name: ngxbot
+    home: "{{ ngxbot_home }}"
+    comment: Nginx Bot
