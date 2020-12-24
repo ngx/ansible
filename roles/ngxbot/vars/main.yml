@@ -1,0 +1,2 @@
+---
+ngxbot_bot_root: "{{ ngxbot_home }}/bot"

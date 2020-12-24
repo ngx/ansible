@@ -1,0 +1,49 @@
+---
+supybot_plugins:
+  - Supybot-plugins/AttackProtector
+  - Irccat
+  - NgxPlugins/PbinAdmin
+  - NgxPlugins/UnregNotify
+
+supybot_networks:
+  freenode:
+    certfile:
+    channels: "##eros-chat #gitea #gitea-dev #nginx #nginx-unit #ngx-social #salt #salt-offtopic"
+    channels.key:
+    ident:
+    nick: ngxbot
+    password: "{{ ngxbot_secrets.ngxbot_freenode_password }}"
+    requireStarttls: "False"
+    sasl.ecdsa_key:
+    sasl.mechanisms: ecdsa-nist256p-challenge external plain
+    sasl.password:
+    sasl.required: "False"
+    sasl.username:
+    servers: irc.freenode.net:6667
+    socksproxy:
+    ssl: "False"
+    ssl.authorityCertificate:
+    ssl.serverFingerprints:
+    umodes:
+    user:
+
+  oftc:
+    certfile:
+    channels: "#debian-nginx"
+    channels.key:
+    ident:
+    nick:
+    password: "{{ ngxbot_secrets.ngxbot_oftc_password }}"
+    requireStarttls: "False"
+    sasl.ecdsa_key:
+    sasl.mechanisms: ecdsa-nist256p-challenge external plain
+    sasl.password:
+    sasl.required: "False"
+    sasl.username:
+    servers: irc.oftc.net:6667
+    socksproxy:
+    ssl: "False"
+    ssl.authorityCertificate:
+    ssl.serverFingerprints:
+    umodes:
+    user:

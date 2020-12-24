@@ -1,0 +1,9 @@
+---
+- include_tasks: requirements.yml
+  tags: [ngxbot_requirements]
+- include_tasks: user.yml
+  tags: [ngxbot_user]
+- include_tasks: repos.yml
+  tags: [ngxbot_repos]
+- include_tasks: config.yml
+  tags: [ngxbot_config]

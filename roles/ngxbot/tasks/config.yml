@@ -1,0 +1,27 @@
+---
+- name: Include requred vars
+  include_vars:
+    file: "{{ item.0 }}.yml"
+    name: "{{ item.1 }}"
+  loop:
+    - [config, ngxbot_config]
+    - [secrets, ngxbot_secrets]
+
+- name: Copy ngxbot config
+  template:
+    src: ngxbot.conf.j2
+    dest: "{{ ngxbot_home }}/ngxbot.conf"
+  # notify: restart ngxbot
+
+- name: Symlink plugins
+  file:
+    path: "{{ ngxbot_bot_root }}/{{ item | basename }}"
+    src: "{{ ngxbot_home }}/repos/{{ item }}"
+    state: link
+  loop: "{{ ngxbot_config.supybot_plugins }}"
+
+- name: Copy ngxbot.start
+  template:
+    src: ngxbot.start.j2
+    dest: "{{ ngxbot_home }}/ngxbot.start"
+  # notify: restart ngxbot

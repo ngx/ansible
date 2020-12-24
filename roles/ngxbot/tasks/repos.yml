@@ -1,0 +1,19 @@
+---
+- name: Include repos vars
+  include_vars:
+    file: repos.yml
+    name: ngxbot_repos
+
+- name: Create dir {{ ngxbot_home }}/repos
+  file:
+    path: "{{ ngxbot_home }}/repos"
+    owner: ngxbot
+    group: ngxbot
+    state: directory
+
+- name: Checkout plugin repos
+  git:
+    dest: "{{ ngxbot_home }}/repos/{{ item.name }}"
+    repo: "{{ item.repo }}"
+    version: "{{ item.version }}"
+  loop: "{{ ngxbot_repos.ngxbot_plugins }}"
